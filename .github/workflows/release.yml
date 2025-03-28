@@ -21,12 +21,12 @@ jobs:
           node-version: '22'
           cache-dependency-path: web/package-lock.json
           cache: 'npm'
-
-      - run: |
-          cd web
-          npm ci
-          npm run build
-
+        
+      - uses: jetli/trunk-action@v0.5.0
+      - run: npx @tailwindcss/cli -i ./styles/main.css -o ./styles/output.css --minify 
+        working-directory: ./web
+      - run: trunk build --release
+        working-directory: ./web
       - uses: dtolnay/rust-toolchain@1.85.0
       - uses: tauri-apps/tauri-action@v0
         env:
