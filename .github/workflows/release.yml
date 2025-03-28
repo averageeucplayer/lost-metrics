@@ -23,6 +23,8 @@ jobs:
           cache: 'npm'
         
       - uses: jetli/trunk-action@v0.5.0
+      - run: npm ci
+        working-directory: ./web
       - run: npx @tailwindcss/cli -i ./styles/main.css -o ./styles/output.css --minify 
         working-directory: ./web
       - run: trunk build --release
