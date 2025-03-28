@@ -23,6 +23,7 @@ jobs:
           cache: 'npm'
         
       - uses: jetli/trunk-action@v0.5.0
+      - run: rustup target add wasm32-unknown-unknown
       - run: npm ci
         working-directory: ./web
       - run: npx @tailwindcss/cli -i ./styles/main.css -o ./styles/output.css --minify 
