@@ -1,0 +1,6 @@
+[submodule "app"]
+	path = app
+	url = git@github.com:averageeucplayer/lost-metrics-app.git
+[submodule "web"]
+	path = web
+	url = git@github.com:averageeucplayer/lost-metrics-web.git
